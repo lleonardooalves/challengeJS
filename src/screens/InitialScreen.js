@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  Image,
-  ImageBackground,
-} from "react-native";
+import { View, StyleSheet, Image, ImageBackground } from "react-native";
+
+import Button from "../components/Button";
 
 const imgBg = require("../images/background_img2.png");
 const logoImage = require("../images/logo.png");
@@ -23,12 +18,7 @@ function InitialScreen({ navigation }) {
           <View style={styles.logoContainer}>
             <Image source={logoImage} style={styles.logo} />
           </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={navigateToRestaurants}
-          >
-            <Text style={styles.buttonText}>Acessar</Text>
-          </TouchableOpacity>
+          <Button onPress={navigateToRestaurants} />
         </View>
       </ImageBackground>
     </View>
@@ -61,21 +51,6 @@ const styles = StyleSheet.create({
     marginBottom: 280,
     marginTop: -95,
     alignSelf: "stretch",
-  },
-  button: {
-    backgroundColor: "#E73030",
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.20)",
-    justifyContent: "center",
-    alignItems: "center",
-    height: 50,
-    width: "100%",
-  },
-  buttonText: {
-    fontFamily: "Poppins-Light",
-    fontSize: 20,
-    color: "white",
   },
 });
 

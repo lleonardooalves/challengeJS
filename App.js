@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import AppNavigator from "./src/routes/AppNavigator";
+import { View, StyleSheet } from "react-native";
 import { loadFonts } from "./src/util/FontsLoader";
+import Navigation from "./src/routes/Navigation";
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -15,11 +14,7 @@ export default function App() {
     return <View style={styles.container} />;
   }
 
-  return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
-  );
+  return <Navigation />;
 }
 
 const styles = StyleSheet.create({
