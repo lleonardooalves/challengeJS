@@ -27,6 +27,7 @@ function Cards({ navigation }) {
       });
   }, []);
 
+
   function navigateToDetail(restaurant) {
     navigation.navigate("RestaurantDetailScreen", { restaurant });
   }

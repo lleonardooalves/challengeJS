@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import BackButton from "../components/BackButton";
 
 const MenuItemCard = ({ menuItem }) => {
   return (
@@ -13,8 +14,11 @@ const MenuItemCard = ({ menuItem }) => {
   );
 };
 
-const RestaurantDetailScreen = ({ route }) => {
+const RestaurantDetailScreen = ({ route, navigation }) => {
   const { restaurant } = route.params;
+  const goBack = () => {
+    navigation.goBack(); 
+  };
 
   function renderStars(rating) {
     const starIcons = [];
@@ -34,6 +38,7 @@ const RestaurantDetailScreen = ({ route }) => {
 
   return (
     <ScrollView style={styles.container}>
+      <BackButton goBack={goBack}/>
       <View style={styles.cardContainer}>
         <View style={styles.cardShadow}></View>
         <Image
