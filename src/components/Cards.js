@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
   ActivityIndicator,
   FlatList,
@@ -8,25 +7,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import axios from "axios";
+
+import LoadApi from "../services/LoadApi";
 
 function Cards({ navigation }) {
-  const [restaurants, setRestaurants] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    axios
-      .get("https://8jcox47hg2.execute-api.us-east-2.amazonaws.com/dev")
-      .then((response) => {
-        setRestaurants(response.data.body.restaurants);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
-  }, []);
-
+  const { restaurants, loading } = LoadApi();
 
   function navigateToDetail(restaurant) {
     navigation.navigate("RestaurantDetailScreen", { restaurant });
@@ -102,7 +87,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     color: "#FFF",
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontSize: 32,
     fontStyle: "normal",
     fontWeight: "700",

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "#FFF",
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontSize: 18,
     fontWeight: "700",
     lineHeight: 32,

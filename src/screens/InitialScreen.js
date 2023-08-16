@@ -1,24 +1,18 @@
 import React from "react";
-import { View, StyleSheet, Image, ImageBackground } from "react-native";
+import { View, StyleSheet, ImageBackground, Text } from "react-native";
 
 import Button from "../components/Button";
 
 const imgBg = require("../images/background_img2.png");
-const logoImage = require("../images/logo.png");
 
 function InitialScreen({ navigation }) {
-  function navigateToRestaurants() {
-    navigation.navigate("RestaurantsListScreen");
-  }
-
   return (
     <View style={styles.container}>
       <ImageBackground source={imgBg} style={styles.backgroundImage}>
+        <Text style={styles.titleH}>Find D Best</Text>
+        <Text style={styles.subtitleH}>Restaurant</Text>
         <View style={styles.content}>
-          <View style={styles.logoContainer}>
-            <Image source={logoImage} style={styles.logo} />
-          </View>
-          <Button onPress={navigateToRestaurants} />
+          <Button navigation={navigation} />
         </View>
       </ImageBackground>
     </View>
@@ -40,17 +34,24 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     marginHorizontal: 25,
   },
-  logoContainer: {
-    alignItems: "center",
-    marginBottom: 40,
-    marginHorizontal: 25,
+  titleH: {
+    flex: 1,
+    color: "#FFF",
+    textAlign: "center",
+    fontFamily: "BebasNeue-Regular",
+    fontSize: 72,
+    fontStyle: "normal",
+    lineHeight: 72,
+    marginTop: 129,
   },
-  logo: {
-    width: 260,
-    height: 250,
-    marginBottom: 280,
-    marginTop: -95,
-    alignSelf: "stretch",
+  subtitleH: {
+    color: "#FFF",
+    textAlign: "center",
+    fontFamily: "Poppins-Light",
+    fontSize: 24,
+    fontStyle: "normal",
+    flex: 1,
+    marginBottom: 540,
   },
 });
 

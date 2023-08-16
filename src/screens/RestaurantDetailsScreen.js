@@ -17,7 +17,7 @@ const MenuItemCard = ({ menuItem }) => {
 const RestaurantDetailScreen = ({ route, navigation }) => {
   const { restaurant } = route.params;
   const goBack = () => {
-    navigation.goBack(); 
+    navigation.goBack();
   };
 
   function renderStars(rating) {
@@ -38,7 +38,7 @@ const RestaurantDetailScreen = ({ route, navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
-      <BackButton goBack={goBack}/>
+      <BackButton goBack={goBack} />
       <View style={styles.cardContainer}>
         <View style={styles.cardShadow}></View>
         <Image
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     color: "#FFF",
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontSize: 32,
     fontStyle: "normal",
     fontWeight: "700",
@@ -142,14 +142,14 @@ const styles = StyleSheet.create({
   },
   descriptionTitle: {
     color: "#FFF",
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontSize: 20,
     fontWeight: "700",
     marginBottom: 10,
   },
   cardDescription: {
     color: "#FFF",
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontSize: 14,
   },
   menuTitleContainer: {
@@ -159,10 +159,9 @@ const styles = StyleSheet.create({
   menuTitle: {
     color: "white",
     fontSize: 20,
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontWeight: "700",
     lineHeight: 26,
-    wordWrap: "break-word",
   },
   menuItemsContainer: {
     marginLeft: 20,
@@ -188,10 +187,9 @@ const styles = StyleSheet.create({
   menuItemTitle: {
     color: "white",
     fontSize: 14,
-    fontFamily: "Poppins",
+    fontFamily: "Poppins-Light",
     fontWeight: "700",
     lineHeight: 16,
-    wordWrap: "break-word",
   },
 });
 

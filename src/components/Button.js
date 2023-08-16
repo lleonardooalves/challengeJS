@@ -1,8 +1,12 @@
-import { StyleSheet, Text, TouchableOpacity} from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-function Button({ onPress }) {
+function Button({ navigation }) {
+  function navigateToRestaurants() {
+    navigation.navigate("RestaurantsListScreen");
+  }
+
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
+    <TouchableOpacity onPress={navigateToRestaurants} style={styles.button}>
       <Text style={styles.buttonText}>Acessar</Text>
     </TouchableOpacity>
   );
